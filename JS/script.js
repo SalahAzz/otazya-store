@@ -161,7 +161,7 @@ function setupReviewForm() {
   const starButtons = Array.from(document.querySelectorAll(".rating-star"));
   if (!(form instanceof HTMLFormElement) || !status || !reviewGrid) return;
 
-  const apiUrl = "api/reviews.php";
+  const apiUrl = "/api/reviews";
   let selectedRating = 0;
   let isSubmitting = false;
 
