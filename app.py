@@ -38,7 +38,16 @@ def handle_reviews():
     if request.method == "GET":
         with get_db() as conn:
             rows = conn.execute(
-                "SELECT id, name, email, review, rating, created_at FROM reviews ORDER BY id DESC LIMIT 100"
+                """
+                SELECT id, name, email, review, rating, created_at
+                FROM (
+                    SELECT id, name, email, review, rating, created_at
+                    FROM reviews
+                    ORDER BY id DESC
+                    LIMIT 100
+                ) AS recent_reviews
+                ORDER BY rating DESC, id DESC
+                """
             ).fetchall()
             reviews = [dict(row) for row in rows]
         return jsonify({"reviews": reviews}), 200

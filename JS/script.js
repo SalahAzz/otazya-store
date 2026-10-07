@@ -195,7 +195,6 @@ function setupReviewForm() {
       });
     } catch (error) {
       console.error("Failed to load reviews:", error);
-      setStatus("تعذر تحميل التقييمات الآن. يرجى المحاولة لاحقًا.", true);
     }
   };
 

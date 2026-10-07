@@ -21,6 +21,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -845,8 +851,12 @@ textarea:focus-visible {
   margin-bottom: 40px;
   padding-bottom: 8px;
   scroll-snap-type: x mandatory;
-  scrollbar-color: var(--lavender) transparent;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.reviews-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .reviews-grid:empty {
